@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Polished Healthcare SaaS Ground: Light, hygienic, high-clarity */
+  --color-paper:         #F8FAFC;  /* slate-50 light background */
+  --color-surface:       #FFFFFF;  /* crisp card surface */
+  --color-sunken:        #F1F5F9;  /* slate-100 sunken wells */
+  --color-border:        #E2E8F0;  /* slate-200 subtle borders */
+  --color-border-strong: #CBD5E1;  /* slate-300 stronger borders */
+
+  /* Navy Typography */
+  --color-ink:        #0F172A;  /* slate-900 primary navy text */
+  --color-ink-muted:  #334155;  /* slate-700 secondary navy text */
+  --color-ink-subtle: #64748B;  /* slate-500 muted text */
+  --color-on-ink:     #FFFFFF;
+
+  /* Teal Accents */
+  --color-teal-50:    #F0FDFA;
+  --color-teal-100:   #CCFBF1;
+  --color-teal-500:   #14B8A6;
+  --color-teal-600:   #0D9488;  /* Primary brand teal */
+  --color-teal-700:   #0F766E;  /* Teal hover */
+  --color-teal-800:   #115E59;
+
+  --color-accent:       #0D9488;
+  --color-accent-hover: #0F766E;
+  --color-accent-subtle: #F0FDFA;
+
+  /* Clinical Status Tones */
+  --color-ok:          #ECFDF5;  /* emerald-50 */
+  --color-ok-ink:      #047857;  /* emerald-700 */
+  --color-warn:        #FFFBEB;  /* amber-50 */
+  --color-warn-ink:    #B45309;  /* amber-700 */
+  --color-danger:      #FEF2F2;  /* red-50 */
+  --color-danger-ink:  #B91C1C;  /* red-700 */
+  --color-info:        #F0F9FF;  /* sky-50 */
+  --color-info-ink:    #0369A1;  /* sky-700 */
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  /* Shadows */
+  --shadow-subtle: 0 1px 3px 0 rgb(15 23 42 / 0.05), 0 1px 2px -1px rgb(15 23 42 / 0.05);
+  --shadow-card: 0 4px 6px -1px rgb(15 23 42 / 0.04), 0 2px 4px -2px rgb(15 23 42 / 0.04);
+  --shadow-elevated: 0 10px 15px -3px rgb(15 23 42 / 0.06), 0 4px 6px -4px rgb(15 23 42 / 0.06);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.6; transform: scale(0.99); }
+  50%      { opacity: 1;   transform: scale(1); }
+}
+
+.animate-breathe {
+  animation: breathe 2.5s ease-in-out infinite;
+}

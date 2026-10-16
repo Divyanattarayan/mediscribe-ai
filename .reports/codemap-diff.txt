@@ -1,0 +1,57 @@
+MediScribe AI — codemap scan
+Generated: 2026-09-17  |  Branch: main @ 89807ef  |  Baseline: none (first scan)
+
+STATUS
+  No previous codemaps existed under docs/CODEMAPS/ or .reports/codemaps/.
+  This is a full initial generation — diff detection is not applicable, and the
+  >30% approval gate did not trigger.
+
+SCANNED
+  backend    62 .py files, 12,890 LOC (excl. __pycache__, .pytest_cache)
+  frontend   26 .ts/.tsx/.css files, 3,654 LOC (excl. node_modules, dist)
+  infra      docker-compose.yml, Dockerfile, Dockerfile.frontend, nginx.conf,
+             .github/workflows/backend.yml, scripts/*.sh
+  data       backend/models.py + 5 Alembic migrations
+
+GENERATED
+  docs/CODEMAPS/architecture.md    topology, 7-stage pipeline, invariants
+  docs/CODEMAPS/backend.md         13 routes, 20 pipeline modules, eval harness
+  docs/CODEMAPS/frontend.md        page tree, components, Zustand store, api layer
+  docs/CODEMAPS/data.md            4 tables, relationships, migration history
+  docs/CODEMAPS/dependencies.md    6 external services, deps, env vars, infra
+
+SURFACE INVENTORY
+  API routes         13  (2 public: /, /health; 11 JWT-guarded)
+  DB tables           4  users, transcriptions, medical_entities, soap_notes
+  Migrations          5  0001 initial .. 0005 asr_confidence
+  Pipeline stages     7  ASR, normalise, validate, entities, IR, facts, SOAP
+  LLM providers       3  groq (pipeline), gemini (judge), cerebras
+  Eval suites         5  local, primock57, primock57_notes, aci_bench, mts_dialog
+  Eval metrics        5  asr, entities, coverage, grounding, judge
+  Committed eval runs 55 backend/eval/results/*.json
+  Backend tests      20  files
+  React pages         4  login, dashboard, history, settings
+  React components   14  5 ui primitives, 8 feature, 1 layout
+
+EXTERNAL SERVICES DETECTED
+  Groq API            LLM, pipeline default (GROQ_API_KEY)
+  Google Gemini       evaluation judge (GEMINI_API_KEY)
+  Cerebras            alternative provider (CEREBRAS_API_KEY)
+  RxNav / RxNorm      medication coding, keyless
+  NLM Clinical Tables ICD-10-CM coding, keyless
+  PriMock57 corpus    eval audio, streamed
+
+STALENESS WARNINGS (>90 days since last commit touching the file)
+  docs/test_results.md   last updated 2026-01-08  — 252 days stale
+  docs/local-dev.md      last updated 2026-05-05  — 135 days stale
+  OK: docs/deployment.md (2026-09-12)
+
+NOTES FOR NEXT SCAN
+  - No router modules: every route lives in backend/main.py. If routers are
+    introduced, backend.md's route table is the map to update first.
+  - No client-side router: App.tsx switches on store.currentPage. Adding
+    react-router changes frontend.md's page tree.
+  - backend/eval/ is a first-class subsystem, not test scaffolding; its results
+    are tied to GROQ_MODEL on Groq. Changing the pipeline model invalidates the
+    committed before/after comparisons in context/MODEL_ROADMAP.md.
+  - .env is present in the working tree with live values.

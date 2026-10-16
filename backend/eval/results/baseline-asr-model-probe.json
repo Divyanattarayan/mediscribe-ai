@@ -1,0 +1,94 @@
+{
+  "label": "asr-model-probe",
+  "purpose": "Comparison of Whisper checkpoints on identical audio with identical decoder settings, to replace base.en. Decoding flags on base.en were exhausted in Phase 4; the remaining gain was in the model.",
+  "suite": "primock57",
+  "stages": [
+    "asr"
+  ],
+  "case_count": 3,
+  "audio_seconds": 1561.44,
+  "caveat": "THREE CHANNELS ONLY. This is an indication, not a baseline, and the numbers here are not comparable with the 20-channel figures in baseline-primock57-asr-phase4.json. The gap between small.en and large-v3-turbo is inside what three recordings can resolve; small.en was chosen on disk and latency grounds with that understood. A 20-channel run is still owed before any of these numbers is quoted.",
+  "machine": "i7-1355U, CPU only (no CUDA), faster-whisper int8",
+  "runs": [
+    {
+      "model": "large-v3-turbo",
+      "note": "condition_on_previous_text=1 (shipping default)",
+      "source_report": "20260911T190622Z_asr-sweep-model-large-v3-turbo.json",
+      "runtime_seconds": 3019.29,
+      "realtime_factor": 1.934,
+      "metrics": {
+        "medical_term_recall": 0.95,
+        "medical_term_error_rate": 0.1092,
+        "wer": 0.1567,
+        "wer_fluent": 0.1191,
+        "wer_deletions": 53.6667,
+        "wer_substitutions": 51.0,
+        "wer_insertions": 19.6667
+      }
+    },
+    {
+      "model": "small.en",
+      "note": "condition_on_previous_text=1 (shipping default)",
+      "source_report": "20260911T195007Z_asr-sweep-model-small.en.json",
+      "runtime_seconds": 1588.68,
+      "realtime_factor": 1.017,
+      "metrics": {
+        "medical_term_recall": 0.9278,
+        "medical_term_error_rate": 0.1092,
+        "wer": 0.1924,
+        "wer_fluent": 0.1304,
+        "wer_deletions": 90.0,
+        "wer_substitutions": 53.6667,
+        "wer_insertions": 8.3333
+      }
+    },
+    {
+      "model": "base.en",
+      "note": "condition_on_previous_text=1 (shipping default) - the previous model",
+      "source_report": "20260911T180003Z_asr-sweep-model-base.en.json",
+      "runtime_seconds": 179.08,
+      "realtime_factor": 0.115,
+      "metrics": {
+        "medical_term_recall": 0.8908,
+        "medical_term_error_rate": 0.1685,
+        "wer": 0.2301,
+        "wer_fluent": 0.1733,
+        "wer_deletions": 100.0,
+        "wer_substitutions": 74.3333,
+        "wer_insertions": 11.6667
+      }
+    },
+    {
+      "model": "distil-small.en",
+      "note": "condition_on_previous_text=0 - the fair retest",
+      "source_report": "20260911T192334Z_asr-sweep-model-distil-small.en-previous0.json",
+      "runtime_seconds": 1006.67,
+      "realtime_factor": 0.645,
+      "metrics": {
+        "medical_term_recall": 0.8074,
+        "medical_term_error_rate": 0.2666,
+        "wer": 0.3108,
+        "wer_fluent": 0.2607,
+        "wer_deletions": 122.6667,
+        "wer_substitutions": 102.6667,
+        "wer_insertions": 25.0
+      }
+    },
+    {
+      "model": "distil-small.en",
+      "note": "condition_on_previous_text=1 - INVALID, decoder fell into a repetition loop",
+      "source_report": "20260911T181559Z_asr-sweep-model-distil-small.en.json",
+      "runtime_seconds": 953.04,
+      "realtime_factor": 0.61,
+      "metrics": {
+        "medical_term_recall": 0.3028,
+        "medical_term_error_rate": 0.7713,
+        "wer": 0.7608,
+        "wer_fluent": 0.7415,
+        "wer_deletions": 550.3333,
+        "wer_substitutions": 70.0,
+        "wer_insertions": 1.6667
+      }
+    }
+  ]
+}

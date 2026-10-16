@@ -1,0 +1,92 @@
+name: backend
+
+on:
+  push:
+    branches: [main]
+    paths: ['backend/**', '.github/workflows/backend.yml']
+  pull_request:
+    paths: ['backend/**', '.github/workflows/backend.yml']
+
+# A newer push makes an in-flight run irrelevant.
+concurrency:
+  group: backend-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: backend/requirements-ci.txt
+
+      - name: Install test dependencies
+        # requirements-ci.txt, not requirements.txt: the Whisper backend and the
+        # 200 MB scispaCy model are stubbed by conftest and would only slow this
+        # down. See the header of that file.
+        run: pip install -r requirements-ci.txt
+
+      - name: Run tests
+        env:
+          JWT_SECRET_KEY: ci-secret-not-for-production-0123456789
+          DATABASE_URL: 'sqlite://'
+          GROQ_API_KEY: ci-placeholder-no-calls-are-made
+          # Every ontology lookup is stubbed in the suite; this makes an escaped
+          # one fail loudly instead of quietly reaching out to the NLM.
+          ONTOLOGY_LINKING: '0'
+        run: python -m pytest -q
+
+  migrations:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: backend/requirements-ci.txt
+
+      - run: pip install -r requirements-ci.txt
+
+      - name: Migrations apply to a clean database, and reverse
+        # Alembic is the source of truth for the schema (see
+        # context/DECISIONS.md), so a model change without a migration has to
+        # fail here rather than at deploy time. Downgrading and re-upgrading
+        # catches revisions that are not actually reversible.
+        env:
+          DATABASE_URL: 'sqlite:///ci-check.db'
+          JWT_SECRET_KEY: ci-secret-not-for-production-0123456789
+        run: |
+          python -m alembic upgrade head
+          python -m alembic downgrade base
+          python -m alembic upgrade head
+
+      - name: Models and migrations agree
+        env:
+          DATABASE_URL: 'sqlite:///ci-check.db'
+          JWT_SECRET_KEY: ci-secret-not-for-production-0123456789
+          GROQ_API_KEY: ci-placeholder-no-calls-are-made
+        run: python -m scripts.check_schema_drift
+
+# Not run here: `python -m eval`. The evaluation suites need the real ASR and
+# NER models and a GROQ_API_KEY, and the generation metrics are non-deterministic
+# at temperature 0.3, so gating a PR on them would be noise. Run it locally
+# against the committed baseline before merging a pipeline change:
+#
+#   python -m eval run --suite local --stages note \
+#     --baseline eval/results/baseline-local.json --fail-on-regression
+#
+# See backend/eval/README.md for which metrics are stable enough to gate on.

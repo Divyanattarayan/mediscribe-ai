@@ -1,0 +1,1036 @@
+{
+  "suite": "local",
+  "label": "phase2-corrected-metric",
+  "stages": [
+    "note"
+  ],
+  "generated_at": "2026-09-09T12:56:49.412976+00:00",
+  "case_count": 4,
+  "failed_cases": [],
+  "runtime_seconds": 155.78,
+  "aggregate": {
+    "assertion_exact_accuracy": {
+      "mean": 0.7681,
+      "n": 4
+    },
+    "assertion_experiencer_accuracy": {
+      "mean": 1.0,
+      "n": 4
+    },
+    "assertion_matched_entities": {
+      "mean": 6.0,
+      "n": 4
+    },
+    "assertion_negated_accuracy": {
+      "mean": 0.9,
+      "n": 4
+    },
+    "assertion_temporality_accuracy": {
+      "mean": 0.868,
+      "n": 4
+    },
+    "entity_lenient_f1": {
+      "mean": 0.8054,
+      "n": 4
+    },
+    "entity_lenient_precision": {
+      "mean": 0.7483,
+      "n": 4
+    },
+    "entity_lenient_predicted": {
+      "mean": 8.0,
+      "n": 4
+    },
+    "entity_lenient_recall": {
+      "mean": 0.8771,
+      "n": 4
+    },
+    "entity_lenient_reference": {
+      "mean": 7.0,
+      "n": 4
+    },
+    "entity_lenient_true_positives": {
+      "mean": 6.0,
+      "n": 4
+    },
+    "entity_strict_f1": {
+      "mean": 0.5073,
+      "n": 4
+    },
+    "entity_strict_precision": {
+      "mean": 0.4699,
+      "n": 4
+    },
+    "entity_strict_predicted": {
+      "mean": 8.0,
+      "n": 4
+    },
+    "entity_strict_recall": {
+      "mean": 0.5541,
+      "n": 4
+    },
+    "entity_strict_reference": {
+      "mean": 7.0,
+      "n": 4
+    },
+    "entity_strict_true_positives": {
+      "mean": 3.5,
+      "n": 4
+    },
+    "generated_term_count": {
+      "mean": 9.0,
+      "n": 4
+    },
+    "hallucinated_term_count": {
+      "mean": 3.25,
+      "n": 4
+    },
+    "hallucination_rate": {
+      "mean": 0.3859,
+      "n": 4
+    },
+    "reference_term_count": {
+      "mean": 0.0,
+      "n": 4
+    }
+  },
+  "cases": [
+    {
+      "case_id": "synthetic/chest-pain-pleuritic",
+      "source": "local-synthetic",
+      "hypothesis_transcript": null,
+      "hypothesis_note": {
+        "subjective": "James Whitfield (DOB 1991-03-14), a 35-year-old patient. Reported symptoms include symptom: sore throat; timing: 2 weeks ago; symptom: cold; timing: 2 weeks ago; sore throat. History gaps identified: vital signs not documented; physical examination findings not documented; smoking status, alcohol use, and other cardiovascular risk factors not addressed; medication and allergy details incomplete (allergies listed as none known).",
+        "objective": "This recording captures history‑taking only; objective findings are pending. Vital signs, physical examination findings, and bedside test results were not documented in the transcript. The clinician ordered an electrocardiogram and troponin blood test, but results are not yet available. This recording captures history-taking only; objective findings are pending clinical examination and investigation.",
+        "assessment": "1. Allergies: documented in the transcript.",
+        "plan": "Not enough information in the recording to complete this section."
+      },
+      "hypothesis_entities": [
+        {
+          "text": "pain",
+          "label": "DISEASE",
+          "start": 186,
+          "end": 190,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "breathlessness",
+          "label": "DISEASE",
+          "start": 550,
+          "end": 564,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "sore throat",
+          "label": "DISEASE",
+          "start": 655,
+          "end": 666,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "allergies",
+          "label": "DISEASE",
+          "start": 783,
+          "end": 792,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition"
+        },
+        {
+          "text": "heart problems",
+          "label": "DISEASE",
+          "start": 857,
+          "end": 871,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "family",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "anatomical"
+        },
+        {
+          "text": "heart attack",
+          "label": "CONDITION",
+          "start": 895,
+          "end": 907,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "family",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition"
+        },
+        {
+          "text": "troponin",
+          "label": "TEST",
+          "start": 994,
+          "end": 1002,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "procedure"
+        },
+        {
+          "text": "ECG",
+          "label": "TEST",
+          "start": 957,
+          "end": 960,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        }
+      ],
+      "metrics": {
+        "entity_lenient_precision": 0.75,
+        "entity_lenient_recall": 0.8571,
+        "entity_lenient_f1": 0.8,
+        "entity_lenient_true_positives": 6.0,
+        "entity_lenient_predicted": 8.0,
+        "entity_lenient_reference": 7.0,
+        "entity_strict_precision": 0.375,
+        "entity_strict_recall": 0.4286,
+        "entity_strict_f1": 0.4,
+        "entity_strict_true_positives": 3.0,
+        "entity_strict_predicted": 8.0,
+        "entity_strict_reference": 7.0,
+        "assertion_negated_accuracy": 1.0,
+        "assertion_temporality_accuracy": 0.8333,
+        "assertion_experiencer_accuracy": 1.0,
+        "assertion_exact_accuracy": 0.8333,
+        "assertion_matched_entities": 6.0,
+        "hallucination_rate": 0.5714,
+        "hallucinated_term_count": 4.0,
+        "generated_term_count": 7.0,
+        "omission_rate": -1.0,
+        "reference_term_count": 0.0
+      },
+      "details": {
+        "entities": {
+          "missed": [
+            "chest"
+          ],
+          "spurious": [
+            "allergy",
+            "heart problem"
+          ]
+        },
+        "assertion_errors": [
+          {
+            "text": "heart attack",
+            "axes": {
+              "temporality": {
+                "expected": "historical",
+                "actual": "current"
+              }
+            }
+          }
+        ],
+        "grounding": {
+          "hallucinated": [
+            "blood test",
+            "electrocardiogram",
+            "physical examination",
+            "vital signs"
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "case_id": "synthetic/diabetes-education",
+      "source": "local-synthetic",
+      "hypothesis_transcript": null,
+      "hypothesis_note": {
+        "subjective": "Susan Callaghan (DOB 1968-11-02), a 57-year-old patient was seen by Priya, junior doctor here. History gaps identified: no current medication list provided; no laboratory values (e.g., HbA1c) reviewed; no physical examination findings documented; Allergies not elicited in this recording.",
+        "objective": "Findings: Blood Test performed, Blood Test performed. Procedures: test: blood test; result_status: abnormal (diagnostic of diabetes); details_missing: True, blood test. Results missing: blood test, results. Procedure count: 2. This recording captures history-taking only; objective findings are pending clinical examination and investigation. Results not documented in the transcript include blood test; results.",
+        "assessment": "1. Diabetes: documented in the transcript. Historical features reported in the history include thrush.",
+        "plan": "Treatment plan: Education: Understanding checked during the explanation.; Written information provided. Medications: insulin. Follow up procedures: blood test, blood test. Safety netting: Advised to make contact or seek review if concerns persist or worsen. Medication count: 2. Follow up: Schedule follow-up appointment as needed."
+      },
+      "hypothesis_entities": [
+        {
+          "text": "diabetes",
+          "label": "DISEASE",
+          "start": 279,
+          "end": 287,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "alternatives": [
+              {
+                "code": "E10.9",
+                "display": "Type 1 diabetes mellitus without complications"
+              },
+              {
+                "code": "E11.9",
+                "display": "Type 2 diabetes mellitus without complications"
+              },
+              {
+                "code": "N25.1",
+                "display": "Nephrogenic diabetes insipidus"
+              }
+            ],
+            "code": "E23.2",
+            "display": "Diabetes insipidus",
+            "match": "search",
+            "preferred_term": "Diabetes mellitus (DM)",
+            "requires_review": true,
+            "score": 61.5,
+            "system": "ICD10CM",
+            "total_candidates": 481
+          }
+        },
+        {
+          "text": "diabetes",
+          "label": "DISEASE",
+          "start": 462,
+          "end": 470,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "alternatives": [
+              {
+                "code": "E10.9",
+                "display": "Type 1 diabetes mellitus without complications"
+              },
+              {
+                "code": "E11.9",
+                "display": "Type 2 diabetes mellitus without complications"
+              },
+              {
+                "code": "N25.1",
+                "display": "Nephrogenic diabetes insipidus"
+              }
+            ],
+            "code": "E23.2",
+            "display": "Diabetes insipidus",
+            "match": "search",
+            "preferred_term": "Diabetes mellitus (DM)",
+            "requires_review": true,
+            "score": 61.5,
+            "system": "ICD10CM",
+            "total_candidates": 481
+          }
+        },
+        {
+          "text": "thrush",
+          "label": "DISEASE",
+          "start": 594,
+          "end": 600,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition"
+        },
+        {
+          "text": "infections",
+          "label": "DISEASE",
+          "start": 656,
+          "end": 666,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "diabetes",
+          "label": "DISEASE",
+          "start": 709,
+          "end": 717,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "alternatives": [
+              {
+                "code": "E10.9",
+                "display": "Type 1 diabetes mellitus without complications"
+              },
+              {
+                "code": "E11.9",
+                "display": "Type 2 diabetes mellitus without complications"
+              },
+              {
+                "code": "N25.1",
+                "display": "Nephrogenic diabetes insipidus"
+              }
+            ],
+            "code": "E23.2",
+            "display": "Diabetes insipidus",
+            "match": "search",
+            "preferred_term": "Diabetes mellitus (DM)",
+            "requires_review": true,
+            "score": 61.5,
+            "system": "ICD10CM",
+            "total_candidates": 481
+          }
+        },
+        {
+          "text": "insulin",
+          "label": "MEDICATION",
+          "start": 375,
+          "end": 382,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "system": "RXNORM",
+            "code": "253182",
+            "display": "insulin",
+            "match": "exact",
+            "score": 100.0
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "insulin",
+          "label": "MEDICATION",
+          "start": 500,
+          "end": 507,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "system": "RXNORM",
+            "code": "253182",
+            "display": "insulin",
+            "match": "exact",
+            "score": 100.0
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "blood test",
+          "label": "TEST",
+          "start": 198,
+          "end": 208,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "procedure"
+        },
+        {
+          "text": "blood test",
+          "label": "TEST",
+          "start": 255,
+          "end": 265,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "procedure"
+        }
+      ],
+      "metrics": {
+        "entity_lenient_precision": 0.8,
+        "entity_lenient_recall": 1.0,
+        "entity_lenient_f1": 0.8889,
+        "entity_lenient_true_positives": 4.0,
+        "entity_lenient_predicted": 5.0,
+        "entity_lenient_reference": 4.0,
+        "entity_strict_precision": 0.8,
+        "entity_strict_recall": 1.0,
+        "entity_strict_f1": 0.8889,
+        "entity_strict_true_positives": 4.0,
+        "entity_strict_predicted": 5.0,
+        "entity_strict_reference": 4.0,
+        "assertion_negated_accuracy": 1.0,
+        "assertion_temporality_accuracy": 0.75,
+        "assertion_experiencer_accuracy": 1.0,
+        "assertion_exact_accuracy": 0.75,
+        "assertion_matched_entities": 4.0,
+        "hallucination_rate": 0.5556,
+        "hallucinated_term_count": 5.0,
+        "generated_term_count": 9.0,
+        "omission_rate": -1.0,
+        "reference_term_count": 0.0
+      },
+      "details": {
+        "entities": {
+          "missed": [],
+          "spurious": [
+            "infection"
+          ]
+        },
+        "assertion_errors": [
+          {
+            "text": "blood test",
+            "axes": {
+              "temporality": {
+                "expected": "historical",
+                "actual": "current"
+              }
+            }
+          }
+        ],
+        "grounding": {
+          "hallucinated": [
+            "allergies",
+            "follow up",
+            "hba1c",
+            "physical examination",
+            "procedure"
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "case_id": "synthetic/medication-review",
+      "source": "local-synthetic",
+      "hypothesis_transcript": null,
+      "hypothesis_note": {
+        "subjective": "DOB 30/06/1957. Patient: Not documented. Encounter type: medication_review. Chief complaint: Patient reports: dizziness, swelling, pressure. Symptoms: dizziness, swelling, pressure. Symptom count: 3. Narrative: Doctor: Hello, take a seat. Can I confirm your name and date of birth? Patient: Michael Osei, 30th of June 1957. Doctor: You're booked in for a medication review today. How are you getting on with the tablets? Patient: Alright mostly. I take the amlodipine in the morning and the atorvastatin at night. Doctor: Any side effects? Patient: My ankles have been a bit puffy the last month or so. Doctor: That can happen with amlodipine. Any dizziness or headaches? Patient: No, none of those. Doctor: Are you managing to take them every day? Patient: I forget the evening one now and then. Doctor: How often would you say? Patient: Maybe twice a week. Doctor: That's useful to know. Have you had your blood pressure checked recently? Patient: Not since last year. Doctor: Let's get a reading today and arrange some bloods to check your kidneys and cholesterol, and we'll review in six weeks to see whether the ankle swelling settles.",
+        "objective": "Findings: No examination findings documented in transcript. Results missing: bloods. Procedure count: 0. This recording captures history-taking only; objective findings are pending clinical examination and investigation. Results not documented in the transcript include bloods.",
+        "assessment": "Not enough information in the recording to complete this section.",
+        "plan": "Treatment plan: Medications: amlodipine, atorvastatin, amlodipine. Medications: amlodipine, atorvastatin. Medication count: 3. Follow up: Schedule follow-up appointment as needed."
+      },
+      "hypothesis_entities": [
+        {
+          "text": "amlodipine",
+          "label": "CHEMICAL",
+          "start": 246,
+          "end": 256,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "code": "17767",
+            "display": "amlodipine",
+            "match": "exact",
+            "score": 100.0,
+            "system": "RXNORM"
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "atorvastatin",
+          "label": "CHEMICAL",
+          "start": 280,
+          "end": 292,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "code": "83367",
+            "display": "atorvastatin",
+            "match": "exact",
+            "score": 100.0,
+            "system": "RXNORM"
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "puffy",
+          "label": "DISEASE",
+          "start": 364,
+          "end": 369,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "amlodipine",
+          "label": "CHEMICAL",
+          "start": 421,
+          "end": 431,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "code": "17767",
+            "display": "amlodipine",
+            "match": "exact",
+            "score": 100.0,
+            "system": "RXNORM"
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "dizziness",
+          "label": "DISEASE",
+          "start": 437,
+          "end": 446,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "headaches",
+          "label": "DISEASE",
+          "start": 450,
+          "end": 459,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "cholesterol",
+          "label": "CHEMICAL",
+          "start": 844,
+          "end": 855,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "swelling",
+          "label": "DISEASE",
+          "start": 912,
+          "end": 920,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "pressure",
+          "label": "SYMPTOM",
+          "start": 703,
+          "end": 711,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        }
+      ],
+      "metrics": {
+        "entity_lenient_precision": 0.625,
+        "entity_lenient_recall": 0.8333,
+        "entity_lenient_f1": 0.7143,
+        "entity_lenient_true_positives": 5.0,
+        "entity_lenient_predicted": 8.0,
+        "entity_lenient_reference": 6.0,
+        "entity_strict_precision": 0.25,
+        "entity_strict_recall": 0.3333,
+        "entity_strict_f1": 0.2857,
+        "entity_strict_true_positives": 2.0,
+        "entity_strict_predicted": 8.0,
+        "entity_strict_reference": 6.0,
+        "assertion_negated_accuracy": 0.6,
+        "assertion_temporality_accuracy": 1.0,
+        "assertion_experiencer_accuracy": 1.0,
+        "assertion_exact_accuracy": 0.6,
+        "assertion_matched_entities": 5.0,
+        "hallucination_rate": 0.25,
+        "hallucinated_term_count": 2.0,
+        "generated_term_count": 8.0,
+        "omission_rate": -1.0,
+        "reference_term_count": 0.0
+      },
+      "details": {
+        "entities": {
+          "missed": [
+            "blood pressure"
+          ],
+          "spurious": [
+            "cholesterol",
+            "pressure",
+            "puffy"
+          ]
+        },
+        "assertion_errors": [
+          {
+            "text": "dizziness",
+            "axes": {
+              "negated": {
+                "expected": true,
+                "actual": false
+              }
+            }
+          },
+          {
+            "text": "headache",
+            "axes": {
+              "negated": {
+                "expected": true,
+                "actual": false
+              }
+            }
+          }
+        ],
+        "grounding": {
+          "hallucinated": [
+            "follow up",
+            "procedure"
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "case_id": "synthetic/assertion-stress",
+      "source": "local-synthetic",
+      "hypothesis_transcript": null,
+      "hypothesis_note": {
+        "subjective": "DOB 09/01/1979. Patient: Not documented. Encounter type: acute_visit. Chief complaint: Patient reports: nausea or vomiting, nausea, vomiting, headache, headache, fever, pressure. Symptoms: nausea or vomiting, nausea, vomiting, headache, headache, fever, pressure. Symptom count: 7. Narrative: Doctor: Good afternoon. Can I take your name and date of birth? Patient: Elena Marsh, 9th of January 1979. Doctor: What can I do for you today? Patient: I've been getting headaches for about three weeks now. Doctor: Any nausea or vomiting with them? Patient: No nausea, and I haven't had any vomiting at all. Doctor: Any visual changes? Patient: No, my vision is fine. Doctor: Have you ever had migraines? Patient: I used to get migraines years ago, but nothing like this. Doctor: Is there anything similar in the family? Patient: My mum has epilepsy, and my brother gets cluster headaches. Doctor: What about your own medical history? Patient: I had asthma as a child but I grew out of it. I've never had high blood pressure. Doctor: Are you on any medication? Patient: Just the sertraline, 50 milligrams in the morning. Doctor: Right. This could be a tension-type headache, though I want to rule out anything else. I'll examine you now and arrange an MRI. If the headache becomes sudden and severe, or you develop a fever or a stiff neck, go straight to A and E.",
+        "objective": "Findings: No examination findings documented in transcript. Procedure count: 0. This recording captures history-taking only; objective findings are pending clinical examination and investigation.",
+        "assessment": "Primary diagnosis: epilepsy. Additional diagnoses: asthma. Historical manifestations: asthma. All conditions: epilepsy, asthma. Condition count:",
+        "plan": "Treatment plan: Medications: sertraline. Medications: sertraline. Medication count: 1. Follow up: Schedule follow-up appointment as needed."
+      },
+      "hypothesis_entities": [
+        {
+          "text": "headaches",
+          "label": "DISEASE",
+          "start": 171,
+          "end": 180,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "nausea or vomiting",
+          "label": "DISEASE",
+          "start": 220,
+          "end": 238,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "nausea",
+          "label": "DISEASE",
+          "start": 262,
+          "end": 268,
+          "negated": true,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "vomiting",
+          "label": "DISEASE",
+          "start": 292,
+          "end": 300,
+          "negated": true,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "migraines",
+          "label": "DISEASE",
+          "start": 395,
+          "end": 404,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "migraines",
+          "label": "DISEASE",
+          "start": 429,
+          "end": 438,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "epilepsy",
+          "label": "DISEASE",
+          "start": 542,
+          "end": 550,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "family",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "system": "ICD10CM",
+            "code": "G40.804",
+            "display": "Other epilepsy, intractable, without status epilepticus",
+            "match": "search",
+            "requires_review": true,
+            "score": 26.2,
+            "alternatives": [
+              {
+                "code": "G40.919",
+                "display": "Epilepsy, unspecified, intractable, without status epilepticus"
+              },
+              {
+                "code": "G40.802",
+                "display": "Other epilepsy, not intractable, without status epilepticus"
+              },
+              {
+                "code": "G40.803",
+                "display": "Other epilepsy, intractable, with status epilepticus"
+              }
+            ],
+            "total_candidates": 42,
+            "preferred_term": "Epilepsy"
+          }
+        },
+        {
+          "text": "headaches",
+          "label": "DISEASE",
+          "start": 580,
+          "end": 589,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "family",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "asthma",
+          "label": "DISEASE",
+          "start": 651,
+          "end": 657,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "alternatives": [
+              {
+                "code": "J45.998",
+                "display": "Other asthma"
+              },
+              {
+                "code": "J82.83",
+                "display": "Eosinophilic asthma"
+              },
+              {
+                "code": "J45.20",
+                "display": "Mild intermittent asthma, uncomplicated"
+              }
+            ],
+            "code": "J45.909",
+            "display": "Unspecified asthma, uncomplicated",
+            "match": "search",
+            "preferred_term": "Asthma",
+            "requires_review": true,
+            "score": 31.6,
+            "system": "ICD10CM",
+            "total_candidates": 19
+          }
+        },
+        {
+          "text": "sertraline",
+          "label": "CHEMICAL",
+          "start": 780,
+          "end": 790,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "system": "RXNORM",
+            "code": "36437",
+            "display": "sertraline",
+            "match": "exact",
+            "score": 100.0
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "headache",
+          "label": "DISEASE",
+          "start": 866,
+          "end": 874,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "headache",
+          "label": "DISEASE",
+          "start": 965,
+          "end": 973,
+          "negated": false,
+          "temporality": "hypothetical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "fever",
+          "label": "DISEASE",
+          "start": 1018,
+          "end": 1023,
+          "negated": false,
+          "temporality": "hypothetical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "pressure",
+          "label": "SYMPTOM",
+          "start": 717,
+          "end": 725,
+          "negated": true,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "MRI",
+          "label": "TEST",
+          "start": 953,
+          "end": 956,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        }
+      ],
+      "metrics": {
+        "entity_lenient_precision": 0.8182,
+        "entity_lenient_recall": 0.8182,
+        "entity_lenient_f1": 0.8182,
+        "entity_lenient_true_positives": 9.0,
+        "entity_lenient_predicted": 11.0,
+        "entity_lenient_reference": 11.0,
+        "entity_strict_precision": 0.4545,
+        "entity_strict_recall": 0.4545,
+        "entity_strict_f1": 0.4545,
+        "entity_strict_true_positives": 5.0,
+        "entity_strict_predicted": 11.0,
+        "entity_strict_reference": 11.0,
+        "assertion_negated_accuracy": 1.0,
+        "assertion_temporality_accuracy": 0.8889,
+        "assertion_experiencer_accuracy": 1.0,
+        "assertion_exact_accuracy": 0.8889,
+        "assertion_matched_entities": 9.0,
+        "hallucination_rate": 0.1667,
+        "hallucinated_term_count": 2.0,
+        "generated_term_count": 12.0,
+        "omission_rate": -1.0,
+        "reference_term_count": 0.0
+      },
+      "details": {
+        "entities": {
+          "missed": [
+            "high blood pressure",
+            "visual change"
+          ],
+          "spurious": [
+            "nausea or vomiting",
+            "pressure"
+          ]
+        },
+        "assertion_errors": [
+          {
+            "text": "migraine",
+            "axes": {
+              "temporality": {
+                "expected": "historical",
+                "actual": "current"
+              }
+            }
+          }
+        ],
+        "grounding": {
+          "hallucinated": [
+            "follow up",
+            "procedure"
+          ]
+        }
+      },
+      "error": null
+    }
+  ]
+}

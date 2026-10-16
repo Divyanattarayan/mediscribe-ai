@@ -1,0 +1,1293 @@
+{
+  "suite": "local",
+  "label": "phase3-final",
+  "stages": [
+    "note"
+  ],
+  "generated_at": "2026-09-11T11:41:19.425078+00:00",
+  "case_count": 4,
+  "failed_cases": [],
+  "runtime_seconds": 489.81,
+  "aggregate": {
+    "assertion_exact_accuracy": {
+      "mean": 0.7681,
+      "n": 4
+    },
+    "assertion_experiencer_accuracy": {
+      "mean": 1.0,
+      "n": 4
+    },
+    "assertion_matched_entities": {
+      "mean": 6.0,
+      "n": 4
+    },
+    "assertion_negated_accuracy": {
+      "mean": 0.9,
+      "n": 4
+    },
+    "assertion_temporality_accuracy": {
+      "mean": 0.868,
+      "n": 4
+    },
+    "entity_lenient_f1": {
+      "mean": 0.8054,
+      "n": 4
+    },
+    "entity_lenient_precision": {
+      "mean": 0.7483,
+      "n": 4
+    },
+    "entity_lenient_predicted": {
+      "mean": 8.0,
+      "n": 4
+    },
+    "entity_lenient_recall": {
+      "mean": 0.8771,
+      "n": 4
+    },
+    "entity_lenient_reference": {
+      "mean": 7.0,
+      "n": 4
+    },
+    "entity_lenient_true_positives": {
+      "mean": 6.0,
+      "n": 4
+    },
+    "entity_strict_f1": {
+      "mean": 0.5073,
+      "n": 4
+    },
+    "entity_strict_precision": {
+      "mean": 0.4699,
+      "n": 4
+    },
+    "entity_strict_predicted": {
+      "mean": 8.0,
+      "n": 4
+    },
+    "entity_strict_recall": {
+      "mean": 0.5541,
+      "n": 4
+    },
+    "entity_strict_reference": {
+      "mean": 7.0,
+      "n": 4
+    },
+    "entity_strict_true_positives": {
+      "mean": 3.5,
+      "n": 4
+    },
+    "generated_term_count": {
+      "mean": 17.25,
+      "n": 4
+    },
+    "hallucinated_term_count": {
+      "mean": 11.5,
+      "n": 4
+    },
+    "hallucination_rate": {
+      "mean": 0.6504,
+      "n": 4
+    },
+    "pipeline_claims_total": {
+      "mean": 23.0,
+      "n": 3
+    },
+    "pipeline_claims_unsupported": {
+      "mean": 3.0,
+      "n": 3
+    },
+    "pipeline_unsupported_claim_rate": {
+      "mean": 0.133,
+      "n": 3
+    },
+    "reference_term_count": {
+      "mean": 0.0,
+      "n": 4
+    }
+  },
+  "cases": [
+    {
+      "case_id": "synthetic/chest-pain-pleuritic",
+      "source": "local-synthetic",
+      "hypothesis_transcript": null,
+      "hypothesis_note": {
+        "subjective": "James Whitfield, DOB 1991-03-14, presents with chest pain that began on Tuesday. He describes the pain as sharp, central, and rated 7/10 at its worst, radiating to his left shoulder. The pain worsens when he lies flat and with deep breaths, and is partially relieved by sitting up. He notes a little shortness of breath when the pain is severe. He reports no regular medications and no known drug allergies. He had a sore throat and mild cold symptoms about two weeks ago. Family history is notable for his father having a myocardial infarction in his fifties.",
+        "objective": "This recording captures history‑taking only; objective findings are pending clinical examination and investigations. Heart rate, blood pressure, respiratory rate, oxygen saturation, and temperature were not documented in transcript.",
+        "assessment": "1. Suspected acute pericarditis – highly concerning for given sharp, pleuritic, positional chest pain that improves with sitting up, recent upper respiratory infection, and radiation to the left shoulder. 2. Acute coronary syndrome – less likely given the absence of exertional, pressure‑like pain, diaphoresis, and classic radiation patterns; however, family history of early myocardial infarction warrants exclusion. 3. Musculoskeletal chest wall pain – possible but less likely because pain is associated with deep breathing and positional changes rather than isolated movement or palpation.",
+        "plan": "Obtain a 12‑lead ECG and serum troponin as ordered to assess for ischemia or myocardial injury. Advise the patient to rest, avoid strenuous activity, and maintain an upright or semi‑upright position to lessen pain. Provide safety‑netting instructions: return immediately for worsening dyspnea, chest pain radiating to the jaw or arm, syncope, or new palpitations. Follow up in 48–72 hours or sooner if test results are abnormal, and arrange outpatient cardiology review if the ECG or troponin suggest cardiac involvement."
+      },
+      "hypothesis_entities": [
+        {
+          "text": "pain",
+          "label": "DISEASE",
+          "start": 186,
+          "end": 190,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "breathlessness",
+          "label": "DISEASE",
+          "start": 550,
+          "end": 564,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "sore throat",
+          "label": "DISEASE",
+          "start": 655,
+          "end": 666,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "allergies",
+          "label": "DISEASE",
+          "start": 783,
+          "end": 792,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition"
+        },
+        {
+          "text": "heart problems",
+          "label": "DISEASE",
+          "start": 857,
+          "end": 871,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "family",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "anatomical"
+        },
+        {
+          "text": "heart attack",
+          "label": "CONDITION",
+          "start": 895,
+          "end": 907,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "family",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition"
+        },
+        {
+          "text": "ECG",
+          "label": "TEST",
+          "start": 957,
+          "end": 960,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "troponin",
+          "label": "TEST",
+          "start": 994,
+          "end": 1002,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "procedure"
+        }
+      ],
+      "metrics": {
+        "pipeline_unsupported_claim_rate": 0.1905,
+        "pipeline_claims_total": 21.0,
+        "pipeline_claims_unsupported": 4.0,
+        "entity_lenient_precision": 0.75,
+        "entity_lenient_recall": 0.8571,
+        "entity_lenient_f1": 0.8,
+        "entity_lenient_true_positives": 6.0,
+        "entity_lenient_predicted": 8.0,
+        "entity_lenient_reference": 7.0,
+        "entity_strict_precision": 0.375,
+        "entity_strict_recall": 0.4286,
+        "entity_strict_f1": 0.4,
+        "entity_strict_true_positives": 3.0,
+        "entity_strict_predicted": 8.0,
+        "entity_strict_reference": 7.0,
+        "assertion_negated_accuracy": 1.0,
+        "assertion_temporality_accuracy": 0.8333,
+        "assertion_experiencer_accuracy": 1.0,
+        "assertion_exact_accuracy": 0.8333,
+        "assertion_matched_entities": 6.0,
+        "hallucination_rate": 0.85,
+        "hallucinated_term_count": 17.0,
+        "generated_term_count": 20.0,
+        "omission_rate": -1.0,
+        "reference_term_count": 0.0
+      },
+      "details": {
+        "fact_table_summary": {
+          "total": 16,
+          "assertable": 16,
+          "unverified": 0,
+          "from_entities": 6,
+          "from_llm": 10,
+          "negated": 0,
+          "by_type": {
+            "symptom": 5,
+            "condition": 2,
+            "medication": 1,
+            "test": 1,
+            "procedure": 1,
+            "allergy": 1,
+            "family_history": 1,
+            "plan_action": 2,
+            "demographic": 2
+          }
+        },
+        "problem_claims": [
+          {
+            "claim": "Advise the patient to rest, avoid strenuous activity, and maintain an upright or semi‑upright position to lessen pain",
+            "section": "plan",
+            "verdict": "unsupported"
+          },
+          {
+            "claim": "Provide safety‑netting instructions to return immediately for worsening dyspnea, chest pain radiating to the jaw or arm, syncope, or new palpitations",
+            "section": "plan",
+            "verdict": "unsupported"
+          },
+          {
+            "claim": "Follow up in 48–72 hours or sooner if test results are abnormal",
+            "section": "plan",
+            "verdict": "unsupported"
+          },
+          {
+            "claim": "Arrange outpatient cardiology review if the ECG or troponin suggest cardiac involvement",
+            "section": "plan",
+            "verdict": "unsupported"
+          }
+        ],
+        "quality_report": {
+          "overall_score": 80,
+          "target_score": 85.0,
+          "passes_threshold": false,
+          "section_scores": {
+            "subjective": 20,
+            "objective": 20,
+            "assessment": 30,
+            "plan": 10
+          },
+          "section_issues": {
+            "subjective": [
+              "missing_history_gaps"
+            ],
+            "objective": [],
+            "assessment": [],
+            "plan": [
+              "unsupported_claims: Advise the patient to rest, avoid strenuous activity, and maintain an upright or semi‑upright position to lessen pain; Provide safety‑netting instructions to return immediately for worsening dyspnea, chest pain radiating to the jaw or arm, syncope, or new palpitations; Follow up in 48–72 hours or sooner if test results are abnormal"
+            ]
+          },
+          "groundedness_check": "claim_entailment"
+        },
+        "entities": {
+          "missed": [
+            "chest"
+          ],
+          "spurious": [
+            "allergy",
+            "heart problem"
+          ]
+        },
+        "assertion_errors": [
+          {
+            "text": "heart attack",
+            "axes": {
+              "temporality": {
+                "expected": "historical",
+                "actual": "current"
+              }
+            }
+          }
+        ],
+        "grounding": {
+          "hallucinated": [
+            "blood pressure",
+            "chest pain",
+            "dyspnea",
+            "follow up",
+            "heart rate",
+            "infection",
+            "myocardial infarction",
+            "oxygen saturation",
+            "palpation",
+            "palpitations",
+            "pericarditis",
+            "pressure",
+            "pressure like pain",
+            "respiratory rate",
+            "shortness of breath",
+            "temperature",
+            "upper respiratory infection"
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "case_id": "synthetic/diabetes-education",
+      "source": "local-synthetic",
+      "hypothesis_transcript": null,
+      "hypothesis_note": {
+        "subjective": "Susan Callaghan, born 2 November 1968 (57 years old), presents to discuss recent blood test results that indicated a diagnosis of diabetes. She reports that she was informed of the diagnosis by a phone call and expresses uncertainty about its meaning. She asks whether her recent episodes of oral thrush are related, and the clinician confirms that elevated blood sugar can predispose to such infections. She voices concern about long‑term complications, specifically mentioning a coworker with diabetes who has experienced eye and foot problems, and she worries that similar issues could affect her. She acknowledges the need to keep blood sugar controlled and notes that regular eye and foot examinations are part of her care plan. Medication history, allergy status, past medical, surgical, social and family histories were not elicited in this recording. The consultation was conducted by Priya, junior doctor here.",
+        "objective": "This recording captures history‑taking only; objective findings such as vital signs, physical examination results, or laboratory values are pending clinical assessment. This recording captures history-taking only; objective findings are pending clinical examination and investigation. Results not documented in the transcript include blood test; results.",
+        "assessment": "The patient has a new diagnosis of type 2 diabetes mellitus and a historical episode of oral thrush. She expresses concern about future eye and foot complications related to diabetes, and these risks were discussed with her, emphasizing the need for ongoing screening.",
+        "plan": "The clinician provided education on type 2 diabetes pathophysiology, the link between hyperglycaemia and infections such as oral thrush, and the importance of regular eye and foot examinations. Written leaflets were given for reference. The patient was instructed to arrange a follow‑up appointment with her primary‑care physician within the next 2–4 weeks to review the abnormal blood test results, obtain fasting glucose and HbA1c values, discuss lifestyle modifications (diet, exercise) and consider initiating pharmacologic therapy if needed. Referral for retinal screening and a comprehensive foot exam was advised. Safety‑netting instructions included contacting the clinic or seeking urgent care if she experiences worsening symptoms such as increased thirst, polyuria, visual changes, foot ulcers, or recurrent infections."
+      },
+      "hypothesis_entities": [
+        {
+          "text": "diabetes",
+          "label": "DISEASE",
+          "start": 279,
+          "end": 287,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "alternatives": [
+              {
+                "code": "E10.9",
+                "display": "Type 1 diabetes mellitus without complications"
+              },
+              {
+                "code": "E11.9",
+                "display": "Type 2 diabetes mellitus without complications"
+              },
+              {
+                "code": "N25.1",
+                "display": "Nephrogenic diabetes insipidus"
+              }
+            ],
+            "code": "E23.2",
+            "display": "Diabetes insipidus",
+            "match": "search",
+            "preferred_term": "Diabetes mellitus (DM)",
+            "requires_review": true,
+            "score": 61.5,
+            "system": "ICD10CM",
+            "total_candidates": 481
+          }
+        },
+        {
+          "text": "diabetes",
+          "label": "DISEASE",
+          "start": 462,
+          "end": 470,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "alternatives": [
+              {
+                "code": "E10.9",
+                "display": "Type 1 diabetes mellitus without complications"
+              },
+              {
+                "code": "E11.9",
+                "display": "Type 2 diabetes mellitus without complications"
+              },
+              {
+                "code": "N25.1",
+                "display": "Nephrogenic diabetes insipidus"
+              }
+            ],
+            "code": "E23.2",
+            "display": "Diabetes insipidus",
+            "match": "search",
+            "preferred_term": "Diabetes mellitus (DM)",
+            "requires_review": true,
+            "score": 61.5,
+            "system": "ICD10CM",
+            "total_candidates": 481
+          }
+        },
+        {
+          "text": "thrush",
+          "label": "DISEASE",
+          "start": 594,
+          "end": 600,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition"
+        },
+        {
+          "text": "infections",
+          "label": "DISEASE",
+          "start": 656,
+          "end": 666,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "diabetes",
+          "label": "DISEASE",
+          "start": 709,
+          "end": 717,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "alternatives": [
+              {
+                "code": "E10.9",
+                "display": "Type 1 diabetes mellitus without complications"
+              },
+              {
+                "code": "E11.9",
+                "display": "Type 2 diabetes mellitus without complications"
+              },
+              {
+                "code": "N25.1",
+                "display": "Nephrogenic diabetes insipidus"
+              }
+            ],
+            "code": "E23.2",
+            "display": "Diabetes insipidus",
+            "match": "search",
+            "preferred_term": "Diabetes mellitus (DM)",
+            "requires_review": true,
+            "score": 61.5,
+            "system": "ICD10CM",
+            "total_candidates": 481
+          }
+        },
+        {
+          "text": "insulin",
+          "label": "MEDICATION",
+          "start": 375,
+          "end": 382,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "code": "253182",
+            "display": "insulin",
+            "match": "exact",
+            "score": 100.0,
+            "system": "RXNORM"
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "insulin",
+          "label": "MEDICATION",
+          "start": 500,
+          "end": 507,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "code": "253182",
+            "display": "insulin",
+            "match": "exact",
+            "score": 100.0,
+            "system": "RXNORM"
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "blood test",
+          "label": "TEST",
+          "start": 198,
+          "end": 208,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "procedure"
+        },
+        {
+          "text": "blood test",
+          "label": "TEST",
+          "start": 255,
+          "end": 265,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "procedure"
+        }
+      ],
+      "metrics": {
+        "entity_lenient_precision": 0.8,
+        "entity_lenient_recall": 1.0,
+        "entity_lenient_f1": 0.8889,
+        "entity_lenient_true_positives": 4.0,
+        "entity_lenient_predicted": 5.0,
+        "entity_lenient_reference": 4.0,
+        "entity_strict_precision": 0.8,
+        "entity_strict_recall": 1.0,
+        "entity_strict_f1": 0.8889,
+        "entity_strict_true_positives": 4.0,
+        "entity_strict_predicted": 5.0,
+        "entity_strict_reference": 4.0,
+        "assertion_negated_accuracy": 1.0,
+        "assertion_temporality_accuracy": 0.75,
+        "assertion_experiencer_accuracy": 1.0,
+        "assertion_exact_accuracy": 0.75,
+        "assertion_matched_entities": 4.0,
+        "hallucination_rate": 0.7778,
+        "hallucinated_term_count": 14.0,
+        "generated_term_count": 18.0,
+        "omission_rate": -1.0,
+        "reference_term_count": 0.0
+      },
+      "details": {
+        "fact_table_summary": {
+          "total": 11,
+          "assertable": 11,
+          "unverified": 0,
+          "from_entities": 4,
+          "from_llm": 7,
+          "negated": 0,
+          "by_type": {
+            "symptom": 1,
+            "condition": 3,
+            "medication": 1,
+            "procedure": 3,
+            "patient_concern": 1,
+            "demographic": 2
+          }
+        },
+        "quality_report": {
+          "overall_score": 74,
+          "target_score": 85.0,
+          "passes_threshold": false,
+          "section_scores": {
+            "subjective": 25,
+            "objective": 20,
+            "assessment": 8,
+            "plan": 21
+          },
+          "section_issues": {
+            "subjective": [],
+            "objective": [],
+            "assessment": [
+              "ungrounded_terms: diabetes mellitus",
+              "missing_problem_list"
+            ],
+            "plan": [
+              "missing_follow_up"
+            ]
+          },
+          "groundedness_check": "lexical_terms"
+        },
+        "entities": {
+          "missed": [],
+          "spurious": [
+            "infection"
+          ]
+        },
+        "assertion_errors": [
+          {
+            "text": "blood test",
+            "axes": {
+              "temporality": {
+                "expected": "historical",
+                "actual": "current"
+              }
+            }
+          }
+        ],
+        "grounding": {
+          "hallucinated": [
+            "assessment",
+            "consultation",
+            "diabetes mellitus",
+            "fasting glucose",
+            "follow up",
+            "hba1c",
+            "increased thirst",
+            "physical examination",
+            "referral",
+            "screening",
+            "therapy",
+            "thirst",
+            "urgent",
+            "vital signs"
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "case_id": "synthetic/medication-review",
+      "source": "local-synthetic",
+      "hypothesis_transcript": null,
+      "hypothesis_note": {
+        "subjective": "Michael Osei, DOB 30 June 1957, age 69, presents for a medication review. He reports taking amlodipine each morning and atorvastatin at night but admits to forgetting the evening dose about twice a week. Over the past month his ankles have become puffy. He denies any dizziness or headaches. He has not had his blood pressure checked since last year. Allergies, past medical history, surgical history, social history, and family history were not elicited in this recording.",
+        "objective": "This encounter captured history‑taking only; objective findings are pending clinical examination and investigations. No vital signs were documented in the transcript. Blood pressure measurement was planned for today but not yet performed, and laboratory tests for renal function and lipid profile were ordered but results are not available.",
+        "assessment": "1. Ankle edema likely secondary to amlodipine therapy, based on recent onset of puffy ankles and the known side‑effect profile of calcium‑channel blockers. 2. Potential uncontrolled hypertension, given the lack of a blood pressure reading for over a year and ongoing amlodipine use. 3. Suboptimal adherence to atorvastatin, with missed doses approximately twice weekly, which may affect lipid control.",
+        "plan": "Obtain a blood pressure reading today and review the result; if elevated, consider adjusting antihypertensive therapy or switching amlodipine to an alternative agent. Order renal function panel and lipid profile now and repeat in six weeks to assess kidney status and cholesterol control. Counsel the patient on the likely link between amlodipine and ankle swelling and discuss the option of dose reduction or switching to a different class of antihypertensive if edema persists. Reinforce the importance of consistent atorvastatin intake and provide strategies to improve adherence, such as setting a daily reminder. Schedule a follow‑up appointment in six weeks to reassess ankle swelling, blood pressure, and laboratory results, and to review medication adherence."
+      },
+      "hypothesis_entities": [
+        {
+          "text": "amlodipine",
+          "label": "CHEMICAL",
+          "start": 246,
+          "end": 256,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "code": "17767",
+            "display": "amlodipine",
+            "match": "exact",
+            "score": 100.0,
+            "system": "RXNORM"
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "atorvastatin",
+          "label": "CHEMICAL",
+          "start": 280,
+          "end": 292,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "code": "83367",
+            "display": "atorvastatin",
+            "match": "exact",
+            "score": 100.0,
+            "system": "RXNORM"
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "puffy",
+          "label": "DISEASE",
+          "start": 364,
+          "end": 369,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "amlodipine",
+          "label": "CHEMICAL",
+          "start": 421,
+          "end": 431,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "code": "17767",
+            "display": "amlodipine",
+            "match": "exact",
+            "score": 100.0,
+            "system": "RXNORM"
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "dizziness",
+          "label": "DISEASE",
+          "start": 437,
+          "end": 446,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "headaches",
+          "label": "DISEASE",
+          "start": 450,
+          "end": 459,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "cholesterol",
+          "label": "CHEMICAL",
+          "start": 844,
+          "end": 855,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "swelling",
+          "label": "DISEASE",
+          "start": 912,
+          "end": 920,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "pressure",
+          "label": "SYMPTOM",
+          "start": 703,
+          "end": 711,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        }
+      ],
+      "metrics": {
+        "pipeline_unsupported_claim_rate": 0.0417,
+        "pipeline_claims_total": 24.0,
+        "pipeline_claims_unsupported": 1.0,
+        "entity_lenient_precision": 0.625,
+        "entity_lenient_recall": 0.8333,
+        "entity_lenient_f1": 0.7143,
+        "entity_lenient_true_positives": 5.0,
+        "entity_lenient_predicted": 8.0,
+        "entity_lenient_reference": 6.0,
+        "entity_strict_precision": 0.25,
+        "entity_strict_recall": 0.3333,
+        "entity_strict_f1": 0.2857,
+        "entity_strict_true_positives": 2.0,
+        "entity_strict_predicted": 8.0,
+        "entity_strict_reference": 6.0,
+        "assertion_negated_accuracy": 0.6,
+        "assertion_temporality_accuracy": 1.0,
+        "assertion_experiencer_accuracy": 1.0,
+        "assertion_exact_accuracy": 0.6,
+        "assertion_matched_entities": 5.0,
+        "hallucination_rate": 0.5,
+        "hallucinated_term_count": 6.0,
+        "generated_term_count": 12.0,
+        "omission_rate": -1.0,
+        "reference_term_count": 0.0
+      },
+      "details": {
+        "fact_table_summary": {
+          "total": 10,
+          "assertable": 10,
+          "unverified": 0,
+          "from_entities": 5,
+          "from_llm": 5,
+          "negated": 0,
+          "by_type": {
+            "symptom": 4,
+            "medication": 2,
+            "plan_action": 3,
+            "demographic": 1
+          }
+        },
+        "problem_claims": [
+          {
+            "claim": "Patient is 69 years old",
+            "section": "subjective",
+            "verdict": "unsupported"
+          }
+        ],
+        "quality_report": {
+          "overall_score": 85,
+          "target_score": 85.0,
+          "passes_threshold": true,
+          "section_scores": {
+            "subjective": 10,
+            "objective": 20,
+            "assessment": 30,
+            "plan": 25
+          },
+          "section_issues": {
+            "subjective": [
+              "unsupported_claims: Patient is 69 years old"
+            ],
+            "objective": [],
+            "assessment": [],
+            "plan": []
+          },
+          "groundedness_check": "claim_entailment"
+        },
+        "entities": {
+          "missed": [
+            "blood pressure"
+          ],
+          "spurious": [
+            "cholesterol",
+            "pressure",
+            "puffy"
+          ]
+        },
+        "assertion_errors": [
+          {
+            "text": "dizziness",
+            "axes": {
+              "negated": {
+                "expected": true,
+                "actual": false
+              }
+            }
+          },
+          {
+            "text": "headache",
+            "axes": {
+              "negated": {
+                "expected": true,
+                "actual": false
+              }
+            }
+          }
+        ],
+        "grounding": {
+          "hallucinated": [
+            "allergies",
+            "edema",
+            "follow up",
+            "hypertension",
+            "therapy",
+            "vital signs"
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "case_id": "synthetic/assertion-stress",
+      "source": "local-synthetic",
+      "hypothesis_transcript": null,
+      "hypothesis_note": {
+        "subjective": "Elena Marsh is a 47-year-old woman who presents with a three‑week history of headaches. She describes the headaches as ongoing for about three weeks; quality, radiation, severity, timing, and aggravating or relieving factors were not documented in the recording. She denies any associated nausea, vomiting, visual changes, or high blood pressure. She reports a remote history of childhood asthma that has resolved and a history of migraines years ago, which she states are not similar to her current symptoms. She is currently taking sertraline 50 mg each morning. Family history includes a mother with epilepsy and a brother with cluster headaches. Allergies, surgical history, and social history were not elicited in this recording.",
+        "objective": "This recording captures history‑taking only; objective findings are pending clinical examination and investigations. Vital signs (heart rate, blood pressure, respiratory rate, oxygen saturation, temperature) were not documented in the transcript.",
+        "assessment": "1. Tension‑type headache – likely given the chronic, non‑pulsatile nature of the headache, absence of red‑flag symptoms such as nausea, vomiting, visual changes, fever, or neck stiffness, and the clinician’s impression. 2. Secondary intracranial pathology – less likely but cannot be excluded without imaging, especially given the three‑week duration; the plan includes MRI to rule this out. 3. Medication overuse headache – unlikely as the patient reports only sertraline use and no analgesic overuse was documented.",
+        "plan": "The clinician will arrange a brain MRI to evaluate for secondary causes of headache. The patient was instructed to seek immediate emergency care if the headache becomes sudden and severe, or if she develops fever or neck stiffness, as per safety‑netting advice. Follow‑up will be scheduled after imaging results to discuss findings and further management. No new medications were prescribed at this visit; the patient will continue sertraline as currently taken. Documentation of allergies, surgical history, and social history will be obtained at the next encounter."
+      },
+      "hypothesis_entities": [
+        {
+          "text": "headaches",
+          "label": "DISEASE",
+          "start": 171,
+          "end": 180,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "nausea or vomiting",
+          "label": "DISEASE",
+          "start": 220,
+          "end": 238,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "nausea",
+          "label": "DISEASE",
+          "start": 262,
+          "end": 268,
+          "negated": true,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "vomiting",
+          "label": "DISEASE",
+          "start": 292,
+          "end": 300,
+          "negated": true,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "migraines",
+          "label": "DISEASE",
+          "start": 395,
+          "end": 404,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "migraines",
+          "label": "DISEASE",
+          "start": 429,
+          "end": 438,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "epilepsy",
+          "label": "DISEASE",
+          "start": 542,
+          "end": 550,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "family",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "alternatives": [
+              {
+                "code": "G40.919",
+                "display": "Epilepsy, unspecified, intractable, without status epilepticus"
+              },
+              {
+                "code": "G40.802",
+                "display": "Other epilepsy, not intractable, without status epilepticus"
+              },
+              {
+                "code": "G40.803",
+                "display": "Other epilepsy, intractable, with status epilepticus"
+              }
+            ],
+            "code": "G40.804",
+            "display": "Other epilepsy, intractable, without status epilepticus",
+            "match": "search",
+            "preferred_term": "Epilepsy",
+            "requires_review": true,
+            "score": 26.2,
+            "system": "ICD10CM",
+            "total_candidates": 42
+          }
+        },
+        {
+          "text": "headaches",
+          "label": "DISEASE",
+          "start": 580,
+          "end": 589,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "family",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        },
+        {
+          "text": "asthma",
+          "label": "DISEASE",
+          "start": 651,
+          "end": 657,
+          "negated": false,
+          "temporality": "historical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "condition",
+          "ontology": {
+            "alternatives": [
+              {
+                "code": "J45.998",
+                "display": "Other asthma"
+              },
+              {
+                "code": "J82.83",
+                "display": "Eosinophilic asthma"
+              },
+              {
+                "code": "J45.20",
+                "display": "Mild intermittent asthma, uncomplicated"
+              }
+            ],
+            "code": "J45.909",
+            "display": "Unspecified asthma, uncomplicated",
+            "match": "search",
+            "preferred_term": "Asthma",
+            "requires_review": true,
+            "score": 31.6,
+            "system": "ICD10CM",
+            "total_candidates": 19
+          }
+        },
+        {
+          "text": "sertraline",
+          "label": "CHEMICAL",
+          "start": 780,
+          "end": 790,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "medication",
+          "ontology": {
+            "code": "36437",
+            "display": "sertraline",
+            "match": "exact",
+            "score": 100.0,
+            "system": "RXNORM"
+          },
+          "confidence": 1.0
+        },
+        {
+          "text": "headache",
+          "label": "DISEASE",
+          "start": 866,
+          "end": 874,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "headache",
+          "label": "DISEASE",
+          "start": 965,
+          "end": 973,
+          "negated": false,
+          "temporality": "hypothetical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "fever",
+          "label": "DISEASE",
+          "start": 1018,
+          "end": 1023,
+          "negated": false,
+          "temporality": "hypothetical",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "pressure",
+          "label": "SYMPTOM",
+          "start": 717,
+          "end": 725,
+          "negated": true,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "symptom"
+        },
+        {
+          "text": "MRI",
+          "label": "TEST",
+          "start": 953,
+          "end": 956,
+          "negated": false,
+          "temporality": "current",
+          "experiencer": "patient",
+          "uncertain": false,
+          "assertion_source": "medspacy_context",
+          "category": "unknown"
+        }
+      ],
+      "metrics": {
+        "pipeline_unsupported_claim_rate": 0.1667,
+        "pipeline_claims_total": 24.0,
+        "pipeline_claims_unsupported": 4.0,
+        "entity_lenient_precision": 0.8182,
+        "entity_lenient_recall": 0.8182,
+        "entity_lenient_f1": 0.8182,
+        "entity_lenient_true_positives": 9.0,
+        "entity_lenient_predicted": 11.0,
+        "entity_lenient_reference": 11.0,
+        "entity_strict_precision": 0.4545,
+        "entity_strict_recall": 0.4545,
+        "entity_strict_f1": 0.4545,
+        "entity_strict_true_positives": 5.0,
+        "entity_strict_predicted": 11.0,
+        "entity_strict_reference": 11.0,
+        "assertion_negated_accuracy": 1.0,
+        "assertion_temporality_accuracy": 0.8889,
+        "assertion_experiencer_accuracy": 1.0,
+        "assertion_exact_accuracy": 0.8889,
+        "assertion_matched_entities": 9.0,
+        "hallucination_rate": 0.4737,
+        "hallucinated_term_count": 9.0,
+        "generated_term_count": 19.0,
+        "omission_rate": -1.0,
+        "reference_term_count": 0.0
+      },
+      "details": {
+        "fact_table_summary": {
+          "total": 18,
+          "assertable": 18,
+          "unverified": 0,
+          "from_entities": 11,
+          "from_llm": 7,
+          "negated": 5,
+          "by_type": {
+            "symptom": 8,
+            "condition": 3,
+            "medication": 1,
+            "test": 1,
+            "family_history": 2,
+            "plan_action": 1,
+            "demographic": 2
+          }
+        },
+        "problem_claims": [
+          {
+            "claim": "Follow‑up will be scheduled after imaging results",
+            "section": "plan",
+            "verdict": "unsupported"
+          },
+          {
+            "claim": "No new medications were prescribed at this visit",
+            "section": "plan",
+            "verdict": "unsupported"
+          },
+          {
+            "claim": "Patient will continue sertraline as currently taken",
+            "section": "plan",
+            "verdict": "unsupported"
+          },
+          {
+            "claim": "Allergies, surgical history, and social history will be documented at the next encounter",
+            "section": "plan",
+            "verdict": "unsupported"
+          }
+        ],
+        "quality_report": {
+          "overall_score": 81,
+          "target_score": 85.0,
+          "passes_threshold": false,
+          "section_scores": {
+            "subjective": 25,
+            "objective": 20,
+            "assessment": 30,
+            "plan": 6
+          },
+          "section_issues": {
+            "subjective": [],
+            "objective": [],
+            "assessment": [],
+            "plan": [
+              "unsupported_claims: Follow‑up will be scheduled after imaging results; No new medications were prescribed at this visit; Patient will continue sertraline as currently taken",
+              "missing_follow_up"
+            ]
+          },
+          "groundedness_check": "claim_entailment"
+        },
+        "entities": {
+          "missed": [
+            "high blood pressure",
+            "visual change"
+          ],
+          "spurious": [
+            "nausea or vomiting",
+            "pressure"
+          ]
+        },
+        "assertion_errors": [
+          {
+            "text": "migraine",
+            "axes": {
+              "temporality": {
+                "expected": "historical",
+                "actual": "current"
+              }
+            }
+          }
+        ],
+        "grounding": {
+          "hallucinated": [
+            "allergies",
+            "emergency",
+            "follow up",
+            "heart rate",
+            "oxygen saturation",
+            "respiratory rate",
+            "stiffness",
+            "temperature",
+            "vital signs"
+          ]
+        }
+      },
+      "error": null
+    }
+  ]
+}
